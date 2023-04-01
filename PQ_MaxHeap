@@ -1,0 +1,24 @@
+class Solution {
+    static int maxDiamonds(int[] A, int N, int K) {
+        // code here
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(N, new Comparator<Integer>() {
+    @Override
+    public int compare(Integer a, Integer b) {
+        return b - a; 
+    }
+}); 
+ 
+        for(int i=0;i<N;i++)
+        pq.add(A[i]);
+        int maxDimds = 0;
+        //int index = N-1;
+        for(int i=0;i<K;i++)
+        {
+           int diamonds =  pq.remove();
+           //System.out.println(diamonds);
+           pq.add((int)Math.ceil(diamonds/2));
+           maxDimds+=diamonds;
+        }
+        return maxDimds;
+    }
+};
