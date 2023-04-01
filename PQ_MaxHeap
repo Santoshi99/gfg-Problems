@@ -22,3 +22,22 @@ class Solution {
         return maxDimds;
     }
 };
+
+++++++++++++++++++++++++++++
+
+ int maxDiamonds(int A[], int N, int K) {
+        // code here
+        priority_queue<int>q;
+        for(int i=0; i<N; i++){
+            q.push(A[i]);
+        }
+        int ans=0;
+        while(K>0){
+            int max = q.top();
+            ans+=max;
+            q.pop();
+            q.push(max/2);
+            K--;
+        }
+        return ans;
+    }
