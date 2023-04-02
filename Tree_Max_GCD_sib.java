@@ -35,3 +35,8 @@ class Solution {
             
         }
 };
+
+
+
+
+//arr.sort((a,b) -> a.get(0) - b.get(0));
