@@ -40,4 +40,27 @@ class Tree
     }
     
 }
+===============
 
+int Balanced(Node*root){
+        if(root==NULL){
+            return false;
+        }
+        int lh=Balanced(root->left);
+            if(lh==-1) {return-1;
+        }
+        int rh=Balanced(root->right);
+            if(rh==-1) {return -1;
+        }
+        if(abs(lh-rh)>1)return -1;
+        else
+        return max(lh,rh)+1;
+    }
+    bool isBalanced(Node *root)
+    {
+        //  Your Code here
+        if(Balanced(root)==-1)
+        return false;
+        else 
+        return true;
+    }
