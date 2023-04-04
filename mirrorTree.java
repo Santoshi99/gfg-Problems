@@ -17,3 +17,18 @@ class Solution {
         return node;
     }
 }
+
+
+===============
+void mirror(Node* root) {
+        if(!root){
+            return ;
+        }
+        if(!root->left and !root->right){
+            return;
+        }
+        swap(root->left,root->right);
+        mirror(root->left);
+        mirror(root->right);
+        
+    }
